@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+  <nav>
+    <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/animals">Animals</a></li>
+      <li><a href="/animals/new">Add Animal</a></li>
+    </ul>
+  </nav>
+</header>
+{% for animal in all_animals %}
+  <div class="animal">
+    <div class="content">      
+            <hr>
+            <li >Name: {{ animal.name }}</li>   
+            <li>Animal Type: {{ animal.animal_type }} </li>
+            <li>Date of Birth: {{ animal.birth_date }} </li>
+            <li>Owner: {{ animal.owner.name }} </li>
+            <li>Vet: {{ animal.vet.name }} </li>
+            <p><a href="/animals/{{animal.id}}/edit">Edit</a></p>
+            <hr>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
+

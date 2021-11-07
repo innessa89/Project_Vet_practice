@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/animals/{{animal.id}}" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ animal.name }}" required autofocus>
+  </div>
+
+  <div>
+    <label for="animal_type">Animal Type:</label>
+    <input type="text" id="animal_type" name="animal_type" value="{{ animal.animal_type }}" required>
+  </div>
+
+  <div>
+    <label for="birth_date">Birth Date:</label>
+    <input type="birth_date" id="birth_date" name="birth_date" value="{{ animal.birth_date }}" required>
+  </div>
+
+  <div>
+    <label for="owner">Owner:</label>
+    <select id="owner" name="owner_id">
+      {% for owner in all_owners %}
+        <option value="{{ owner.id }}"
+          {% if animal.owner.id== owner.id %} selected="selected"{% endif %}>
+          {{ owner.name }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div>
+    <label for="vet">Vet:</label>
+    <select id="vet" name="vet_id">
+      {% for vet in all_vets %}
+        <option value="{{ vet.id }}"
+          {% if animal.vet.id== vet.id %} selected="selected"{% endif %}>
+          {{ vet.name }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <button type="submit">Edit Animal</button>
+
+</form>
+
+{% endblock %}
