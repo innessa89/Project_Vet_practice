@@ -49,12 +49,14 @@ def delete_all():
 
 
 def delete(id):
+    animal_repository.delete_by_vet_id(id)
+    owner_repository.delete_by_vet_id(id)
     sql = "DELETE FROM vets WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
 
 def update(vet):
-    sql = "UPDATE vets SET (name) = (%s) WHERE id = %s"
-    values = [vet.name]
+    sql = "UPDATE vets SET name = %s WHERE id = %s"
+    values = [vet.name,vet.id]
     run_sql(sql, values)

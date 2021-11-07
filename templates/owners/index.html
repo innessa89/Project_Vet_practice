@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+  <nav>
+    <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/owners/new">Add Owner</a></li>
+    </ul>
+  </nav>
+</header>
+{% for owner in all_owners %}
+  <div class="owner">
+    <div class="content">      
+            <hr>
+            <li >Name: {{ owner.name }}</li>   
+            <li>Contact Details {{ owner.contact_info }} </li>
+            <li>Vet: {{ owner.vet.name }} </li>
+            <p><a href="/owners/{{owner.id}}/edit">Edit Owner</a></p>
+
+            <form class="delete-form" action="/owners/{{owner.id}}/delete" method="POST">
+              <button id="Remove" type="submit">Delete Owner</button>         
+            </form>
+            <hr>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
+

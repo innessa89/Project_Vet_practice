@@ -50,12 +50,26 @@ def delete_all():
 
 
 def delete(id):
-    sql = "DELETE  FROM owners WHERE id = %s"
+    animal_repository.delete_by_owner_id(id)
+    sql = "DELETE FROM owners WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def delete_by_vet_id(vet_id):
+    sql = "SELECT id FROM owners where vet_id = %s"
+    values = [vet_id]
+    results = run_sql(sql)
+
+    for row in results:
+        owner_id = row['id']
+        animal_repository.delete_by_owner_id(owner_id)
+
+    sql = "DELETE FROM owners WHERE vet_id = %s"
+    values = [vet_id]
+    run_sql(sql, values)    
 
 
 def update(owner):
     sql = "UPDATE owners SET (name,vet_id,contact_info) = (%s, %s, %s) WHERE id = %s"
-    values = [owner.name,owner.vet.id,owner.contact_info]
+    values = [owner.name,owner.vet.id,owner.contact_info,owner.id]
     run_sql(sql, values)

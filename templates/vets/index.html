@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+  <nav>
+    <ul class="menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/vets/new">Add Vet</a></li>
+    </ul>
+  </nav>
+</header>
+{% for vet in all_vets %}
+  <div class="vet">
+    <div class="content">      
+            <hr>
+            <li >Name: {{ vet.name }}</li>  
+            <p><a href="/vets/{{vet.id}}/edit">Edit Vet</a></p> 
+            <form class="delete-form" action="/vets/{{vet.id}}/delete" method="POST">
+              <button id="Remove" type="submit">Delete Vet</button>         
+            </form>
+            <hr>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
+

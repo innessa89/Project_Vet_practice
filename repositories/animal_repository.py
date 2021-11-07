@@ -33,7 +33,6 @@ def select_all():
     return animals
 
 
-
 def select(id):
     animal = None
     sql = "SELECT * FROM animals WHERE id = %s"
@@ -49,15 +48,46 @@ def select(id):
     return animal
 
 
+
 def delete_all():
     sql = "DELETE FROM animals "
     run_sql(sql)
 
 
 def delete(id):
-    sql = "DELETE  FROM animals WHERE id = %s"
+    treatment_repository.delete_by_animal_id(id)
+    sql = "DELETE FROM animals WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def delete_by_vet_id(vet_id):
+    sql = "SELECT id FROM animals where vet_id = %s"
+    values = [vet_id]
+    results = run_sql(sql)
+
+    for row in results:
+        animal_id = row['id']
+        treatment_repository.delete_by_animal_id(animal_id)
+
+    sql = "DELETE FROM animals WHERE vet_id = %s"
+    values = [vet_id]
+    
+    run_sql(sql, values)    
+
+
+def delete_by_owner_id(owner_id):
+    sql = "SELECT id FROM animals where owner_id = %s"
+    values = [owner_id]
+    results = run_sql(sql)
+
+    for row in results:
+        animal_id = row['id']
+        treatment_repository.delete_by_animal_id(animal_id)
+
+    sql = "DELETE FROM animals WHERE owner_id = %s"
+    values = [owner_id]
+    
+    run_sql(sql, values)  
 
 
 def update(animal):

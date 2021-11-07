@@ -49,8 +49,14 @@ def delete_all():
 
 
 def delete(id):
-    sql = "DELETE  FROM treatments WHERE id = %s"
+    sql = "DELETE FROM treatments WHERE id = %s"
     values = [id]
+    run_sql(sql, values)
+
+
+def delete_by_animal_id(animal_id):
+    sql = "DELETE FROM treatments WHERE animal_id = %s"
+    values = [animal_id]
     run_sql(sql, values)
 
 
