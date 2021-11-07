@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
+<header>
+    <nav>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/animals">Animals</a></li>
+      </ul>
+    </nav>
+  </header>
+
 <form action="/animals" method="post">
     <div>
       <label for="name">Name:</label>

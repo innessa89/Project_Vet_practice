@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+    <nav>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/vets">Add Vet</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<form action="/vets/{{vet.id}}" method="post">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ vet.name }}" required autofocus>
+  </div>
+
+  
+  <button type="submit">Edit Vet</button>
+</form>
+
+
+{% endblock %}
