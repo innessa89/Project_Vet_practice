@@ -14,7 +14,7 @@ def animals():
     return render_template("animals/index.html",all_animals=animals)
 
 # # NEW
-# # GET '/tasks/new'
+# # GET '/animals/new'
 @animals_blueprint.route("/animals/new", methods=['GET'])
 def new_animal():
     vets=vet_repository.select_all()

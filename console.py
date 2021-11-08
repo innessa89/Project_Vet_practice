@@ -9,13 +9,26 @@ import repositories.animal_repository as animal_repository
 import repositories.vet_repository as vet_repository
 import repositories.treatment_repository as treatment_repository
 
-vet1=Vet("Ilker Jons")
+vet1=Vet("Ilker Sezer")
 vet2=Vet("Stiv Black")
+vet3=Vet("John Lewis")
+vet4=Vet("Jonny Walker")
+vet5=Vet("Jack Thomson")
+vet6=Vet("Jim Taylor")
+
 
 vet1=vet_repository.save(vet1)
 print(vet1.id)
 vet2=vet_repository.save(vet2)
 print(vet2.id)
+vet3=vet_repository.save(vet3)
+print(vet3.id)
+vet4=vet_repository.save(vet4)
+print(vet4.id)
+vet5=vet_repository.save(vet5)
+print(vet5.id)
+vet6=vet_repository.save(vet6)
+print(vet6.id)
 
 owner1=Owner("Deniz Sezer",vet1,"+445050973570")
 owner2=Owner("Joanna McArthur",vet2,"+446580876545")

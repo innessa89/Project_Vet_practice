@@ -1,0 +1,175 @@
+\q
+CREATE DATABASE star_wars:
+CREATE DATABASE star_wars:
+\q
+CREATE DATABASE star_wars
+CREATE DATABASE star_wars:
+\q
+select * from characters:
+\q
+psql -d task_manager -f db/task_manager.sqll
+CREATE DATABASE star_wars:
+CREATE DATABASE star_wars:\q
+exit()
+\q
+\dt
+\q
+\dt
+\c
+\c task_manager 
+\dt
+quit()
+\q
+\q
+\c task_manager 
+\dt
+psql -d db
+\q
+\q
+psql -d
+psql -c
+\c task_manager 
+\dt
+\q
+\q
+\q
+\c task_manager 
+\dt
+exit()
+\q
+\q
+\c music_collection 
+\dt 
+\td
+\dt
+exit()
+\q
+\q
+SELECT * FROM albums
+psql -d
+print(album.__dict__)
+\q
+\q
+python3 console.py
+exit()
+\c music_collection 
+exit()
+\q
+select * from models
+SELECT * FROM albums
+\q
+\q
+cd 
+\q
+\c task_manager 
+\dt
+select * from users
+select*from tasks
+INSERT INTO users (last_name, first_name) VALUES ('John', 'Black');
+INSERT INTO users (last_name, first_name) VALUES ('John', 'Black');
+select * from tasks;
+select * from users;
+select schema_name
+from information_schema.schemata;
+\dt *.*
+select schema_name
+from information_schema.schemata;
+SELECT *
+FROM pg_settings
+WHERE name = 'port';
+\du
+select * from users;
+\c task_manager 
+select * from users;
+\c music_collection 
+select * from albums
+;
+select * from albums;
+select * from artists;
+q
+quit
+\q
+\c music_collectio
+quit()
+;
+\c task_manager 
+print(task.__dict__)
+;
+exit()
+\q
+\c music_collection 
+select * from albums;
+delete from albums where id=2;
+select * from albums;
+delete from albums where id=3;
+select * from albums;
+select * from albums;
+select * from albums;
+select * from albums;
+select * from albums;
+select * from artists;
+select * from albums where artist_id=1;
+select * from albums
+;
+select * from atrists;
+select * from albums;
+\q
+\q
+\l
+\c coo
+\c book_controller 
+\dt
+\q
+\q
+\dt
+select * from authors;
+insert into authors (name) values ('king');
+select * from authors;
+\q
+\c
+\c book_controller 
+select * from books ;
+\q
+\c quest_advisor 
+\dt
+psql -d quest_adviser -f db/quest_advisor.sql
+psql
+\q
+select * from users;
+select * from locations;
+selecr * from visits;
+select * from visits;
+select * from users;
+select locations.* from locations inner join visits on visits.location_id=locations.id;
+select locations.* from locations inner join visits on visits.location_id=locations.id where user_id=2;
+\q
+\c
+\q
+\q
+\c
+exit()
+\q
+\c vet_practice 
+select * from animals;
+select * from animals;
+select * from animals;
+DELETE FROM animals WHERE id = 1;
+select * from owners;
+UPDATE vets SET (name) = ("ibrahim") WHERE id = 2
+;
+UPDATE vets SET (name) = ('ibrahim') WHERE id = 2;
+UPDATE vets SET (name) = (ibrahim) WHERE id = 2;
+UPDATE vets SET (name) = "ibrahim" WHERE id = 2;
+UPDATE vets SET name = "ibrahim" WHERE id = 2;
+UPDATE vets SET name = 'ibrahim' WHERE id = 2;
+\q
+\c vet_practice 
+select * from owners;
+select * from vets
+;
+select * from treatments
+;
+select * from animals
+;
+psql
+\s vet
