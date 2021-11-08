@@ -25,21 +25,21 @@ def select_all():
 
     for row in results:
         animal=animal_repository.select(row['animal_id'])
-        treatment = Treatment(row['check_in_date'],row['check_out_date'], animal, row['treatments_notes'],row['id'])
+        treatment = Treatment(row['check_in_date'],row['check_out_date'], animal, row['treatment_notes'],row['id'])
         treatments.append(treatment)
     return treatments
 
 
 
 def select(id):
-    owner = None
+ 
     sql = "SELECT * FROM treatments WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
 
     if result is not None:
         animal=animal_repository.select(result['animal_id'])
-        treatment = Treatment(result['check_in_date'],result['check_out_date'], animal, result['treatments_notes'],result['id'])
+        treatment = Treatment(result['check_in_date'],result['check_out_date'], animal, result['treatment_notes'],result['id'])
     return treatment
 
 

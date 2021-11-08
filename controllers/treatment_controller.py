@@ -28,10 +28,10 @@ def new_treatment():
 def create_treatment():
     check_in_date=request.form['check_in_date']
     check_out_date=request.form['check_out_date']
-    treatment_notes=request.form['treatment_notes']
     animal_id=request.form['animal_id']
+    treatment_notes=request.form['treatment_notes']
     animal=animal_repository.select(animal_id)
-    treatment=Treatment(check_in_date,check_out_date,treatment_notes,animal,id)
+    treatment=Treatment(check_in_date,check_out_date,animal,treatment_notes,id)
     treatment_repository.save(treatment)
     return redirect('/treatments')
 
@@ -62,8 +62,8 @@ def update_treatment(id):
     treatment_notes=request.form['treatment_notes']
     animal_id=request.form['animal_id']
     animal=animal_repository.select(animal_id)
-    treatment=Treatment(check_in_date,check_out_date,treatment_notes,animal,id)
-    owner_repository.update(treatment)
+    treatment=Treatment(check_in_date,check_out_date,animal,treatment_notes,id)
+    treatment_repository.update(treatment)
     return redirect('/treatments')
 
 

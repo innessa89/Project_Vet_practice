@@ -1,0 +1,41 @@
+body{
+    font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+    margin: 0;
+    background-color: ;
+}
+
+header {
+    padding: 10px;
+    margin: 0;
+    background: rgb(60,109,129);
+    background: linear-gradient(0deg, rgba(60,109,129,1) 0%, rgba(225,228,233,1) 100%);
+}
+
+.menu{
+    display: flex;
+    padding: 10px;
+    list-style-type: none;
+    margin: 30px;
+   
+
+}    
+
+.menu li{
+    text-align: center;
+    margin: 5px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.first-page-logo h1{
+    font-family: fantasy;
+    font-size: 60px;
+    text-align: center;
+}
+
+    
+   
+
+
+
+

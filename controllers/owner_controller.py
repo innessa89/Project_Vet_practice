@@ -29,7 +29,7 @@ def create_owner():
     contact_info=request.form['contact_info']
     vet_id=request.form['vet_id']
     vet=vet_repository.select(vet_id)
-    owner=Owner(name,contact_info,vet,id)
+    owner=Owner(name,vet,contact_info)
     owner_repository.save(owner)
     return redirect('/owners')
 

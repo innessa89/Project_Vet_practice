@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header>
+    <nav>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/treatments">Treatments Details</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<form action="/treatments" method="post">
+    <div>
+      <label for="check_in_date">Check In Date:</label>
+      <input type="text" id="check_in_date" name="check_in_date" placeholder="Check In Date">
+    </div>
+    <div>
+      <label for="check_out_date">Check Out Date:</label>
+      <input type="text" id="check_out_date" name="check_out_date" placeholder="Check Out Date">
+    </div>
+    <div>
+       <label for="treatment_notes">Treatment Notes:</label>
+       <input type="text" id="treatment_notes" name="treatment_notes" placeholder="Treatment Notes">
+    </div>
+    <div>
+    <label for="animal">Animal Name:</label>
+      <select id="animal" name="animal_id">
+         {% for animal in all_animals %}
+            <option value="{{animal.id}}">{{animal.name}}</option>
+         {% endfor %}    
+      </select>
+    </div>
+  
+    <button type="submit">Add Treatment Details</button>
+  
+  </form>
+  
+{% endblock %}

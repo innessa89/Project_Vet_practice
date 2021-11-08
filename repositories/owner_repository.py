@@ -8,8 +8,8 @@ import repositories.vet_repository as vet_repository
 import repositories.treatment_repository as treatment_repository
 
 def save(owner):
-    sql = "INSERT INTO owners (name,vet_id,contact_info) VALUES (%s, %s, %s) RETURNING *"
-    values = [owner.name,owner.vet.id,owner.contact_info]
+    sql = "INSERT INTO owners (name,contact_info,vet_id) VALUES (%s, %s, %s) RETURNING *"
+    values = [owner.name,owner.contact_info,owner.vet.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     owner.id = id
