@@ -5,11 +5,11 @@
     <nav>
       <ul class="menu">
         <li><a href="/">Home</a></li>
-        <li><a href="/owners">Add Owner</a></li>
+        <li><a href="/owners">Owners</a></li>
       </ul>
     </nav>
   </header>
-
+<div class="container">
 <form action="/owners/{{owner.id}}" method="post">
   <div>
     <label for="name">Name:</label>
@@ -33,5 +33,5 @@
   <button type="submit">Edit Owner</button>
 </form>
 
-
+</div>
 {% endblock %}

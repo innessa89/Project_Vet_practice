@@ -5,11 +5,11 @@
     <nav>
       <ul class="menu">
         <li><a href="/">Home</a></li>
-        <li><a href="/animals">Add Animal</a></li>
+        <li><a href="/animals">Animals</a></li>
       </ul>
     </nav>
   </header>
-
+<div class="container">
 <form action="/animals/{{animal.id}}" method="post">
   <div>
     <label for="name">Name:</label>
@@ -39,6 +39,6 @@
   </div>
   <button type="submit">Edit Animal</button>
 </form>
-
+</div>
 
 {% endblock %}

@@ -1,14 +1,16 @@
 body{
     font-family: "Trebuchet MS","Lucida Sans", arial, sans-serif; font-size: 16px;
     margin: 0;
-    background-color:#eef0e7;
+    background-color:#fcf8f4;
 }
 
 header {
     padding: 10px;
     margin: 0;
-    background: rgb(216,227,158);
+    background: rgb(78, 82, 3);
     background: linear-gradient(0deg, rgba(216,227,158,1) 0%, rgba(5,88,42,1) 100%);
+    /* background: rgb(101,61,7);
+    background: linear-gradient(90deg, rgba(101,61,7,1) 0%, rgba(219,198,163,1) 50%, rgba(228,219,206,1) 100%);    border-radius: 4px; */
 }
 
 .menu{
@@ -23,55 +25,93 @@ header {
     margin: 5px;
     border: 2px solid black;
     padding: 10px;
-    background-color:#05582a
+    background-color:#dbc6a3
 }
 
 .menu a {
-    color:white;
+    color:black;
     text-decoration: none;
-}
-
-.first-page-logo h1{
-    font-family: "Lucida Sans";
-    font-size: 50px;
-    text-align: center;
-
-}
-
-.vet{
-    margin-top: 20px;
-    margin-left: 30px;
-    border: 1px solid #ccc;
-    width: 350px;
-    min-height: 68px;
-    padding: 10px;
-    display: flex;
-    line-height: 18px;
-    margin-bottom: 10px;
-}
-
-.content{
-    display: flex;
-    position: relative;
 }
 
 .content li{
     list-style: none; 
     font: 17px "Trebuchet MS", "Lucida Sans";
-    padding: .4em .4em .4em 2em;
-    margin: .5em 0;
-    background: #DAD2CA;
+    background: #f0f3e1
+}
 
+/* button {
+    width : 50%;
+    padding-left: 10px;
+    padding: 10px;
+    margin: 10px;
+  } */
+
+  .container{
+    width: 1000px;
+    height: 667px;
+    background-image: url(vet_project_image/e99cda8fbae4e4f41fbe17aebc6191e5.png);
+    background-repeat: no-repeat;
+    margin: 10px auto 0 auto;
+    text-align: center;
+
+    /* margin: 10px auto 0 auto;
+    text-align: center;
+    background-image: url(vet_project_image/1.jpeg);
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 1000px;
+    */
+}
+
+input,select{
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    padding-left: 10px;
 
 }
 
-.buttons{
-    margin-top: 10px;
-    margin-left: 2px;
-    font-size: 1.4em;
-   
+/* .input-select{
+    padding:11px 30px;
+    margin: 5px 0 20px 0;
+    font-size: 15px;
+    color: #fff;
+    background-color: #dfecd6;
+    border: none;
+    border-bottom: 4px solid #6ee9fd;
+    cursor:pointer;
+}
+   */
+
+ .animal{
+    border: 1px solid #ccc;
+    padding: 10px;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+.owner{
+    border: 1px solid #ccc;
+    padding: 10px;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+.vet{
+    border: 1px solid #ccc;
+    padding: 10px;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+.treatment{
+    border: 1px solid #ccc;
+    padding: 10px;
+    line-height: 18px;
+    margin-bottom: 10px
 }
 
+  
+  
 
    
 

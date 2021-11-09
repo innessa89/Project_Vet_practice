@@ -5,11 +5,11 @@
     <nav>
       <ul class="menu">
         <li><a href="/">Home</a></li>
-        <li><a href="/treatments">Add Treatment Details</a></li>
+        <li><a href="/treatments">All Treatment Details</a></li>
       </ul>
     </nav>
   </header>
-
+<div class="container">
 <form action="/treatments/{{treatment.id}}" method="post">
   <div>
     <label for="check_in_date">Check In Date:</label>
@@ -36,6 +36,6 @@
   </div>
   <button type="submit">Edit Treatment Details</button>
 </form>
-
+</div>
 
 {% endblock %}

@@ -9,23 +9,29 @@
     </ul>
   </nav>
 </header>
+
 {% for animal in all_animals %}
   <div class="animal">
     <div class="content">      
-            <hr>
+            
             <li >Name: {{ animal.name }}</li>   
             <li>Animal Type: {{ animal.animal_type }} </li>
             <li>Date of Birth: {{ animal.birth_date }} </li>
             <li>Owner: {{ animal.owner.name }} </li>
             <li>Vet: {{ animal.vet.name }} </li>
-            <p><a href="/animals/{{animal.id}}/edit">Edit Animal</a></p>
 
+            <div class="buttons">
+            <form class="edit-form" action="/animals/{{animal.id}}/edit" method="GET">
+              <button id="Edit" type="submit">Edit Animal</button>         
+            </form>
             <form class="delete-form" action="/animals/{{animal.id}}/delete" method="POST">
               <button id="Remove" type="submit">Delete Animal</button>         
             </form>
-            <hr>
+          </div> 
     </div>
   </div>
+ 
+
 {% endfor %}
 
 {% endblock %}
