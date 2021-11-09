@@ -1,14 +1,14 @@
 body{
-    font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+    font-family: "Trebuchet MS","Lucida Sans", arial, sans-serif; font-size: 16px;
     margin: 0;
-    background-color: ;
+    background-color:#eef0e7;
 }
 
 header {
     padding: 10px;
     margin: 0;
-    background: rgb(60,109,129);
-    background: linear-gradient(0deg, rgba(60,109,129,1) 0%, rgba(225,228,233,1) 100%);
+    background: rgb(216,227,158);
+    background: linear-gradient(0deg, rgba(216,227,158,1) 0%, rgba(5,88,42,1) 100%);
 }
 
 .menu{
@@ -16,8 +16,6 @@ header {
     padding: 10px;
     list-style-type: none;
     margin: 30px;
-   
-
 }    
 
 .menu li{
@@ -25,15 +23,56 @@ header {
     margin: 5px;
     border: 2px solid black;
     padding: 10px;
+    background-color:#05582a
+}
+
+.menu a {
+    color:white;
+    text-decoration: none;
 }
 
 .first-page-logo h1{
-    font-family: fantasy;
-    font-size: 60px;
+    font-family: "Lucida Sans";
+    font-size: 50px;
     text-align: center;
+
 }
 
-    
+.vet{
+    margin-top: 20px;
+    margin-left: 30px;
+    border: 1px solid #ccc;
+    width: 350px;
+    min-height: 68px;
+    padding: 10px;
+    display: flex;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+
+.content{
+    display: flex;
+    position: relative;
+}
+
+.content li{
+    list-style: none; 
+    font: 17px "Trebuchet MS", "Lucida Sans";
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+    background: #DAD2CA;
+
+
+}
+
+.buttons{
+    margin-top: 10px;
+    margin-left: 2px;
+    font-size: 1.4em;
+   
+}
+
+
    
 
 

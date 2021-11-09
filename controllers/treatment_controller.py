@@ -5,6 +5,7 @@ from repositories import owner_repository
 from repositories import vet_repository
 from repositories import treatment_repository
 from models.treatment import Treatment
+from datetime import date
 
 treatments_blueprint=Blueprint('treatments',__name__)
 
@@ -31,7 +32,7 @@ def create_treatment():
     animal_id=request.form['animal_id']
     treatment_notes=request.form['treatment_notes']
     animal=animal_repository.select(animal_id)
-    treatment=Treatment(check_in_date,check_out_date,animal,treatment_notes,id)
+    treatment=Treatment(check_in_date,check_out_date,animal,treatment_notes)
     treatment_repository.save(treatment)
     return redirect('/treatments')
 
@@ -42,6 +43,12 @@ def create_treatment():
 def show_treatment(id):
     treatment=treatment_repository.select(id)
     return render_template('/treatments/index.html',treatment=treatment)
+
+
+@treatments_blueprint.route("/treatments/show", methods=['GET'])
+def show_treatment_by_date():
+    treatments=treatment_repository.select_by_date()
+    return render_template('/treatments/show.html',all_treatments=treatments)    
 
 
 # EDIT

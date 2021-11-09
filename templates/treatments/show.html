@@ -6,11 +6,12 @@
     <ul class="menu">
       <li><a href="/">Home</a></li>
       <li><a href="/treatments/new">Add Treatment Details</a></li>
-      <li><a href="/treatments/show">Today In The Clinic</a></li>
+      <li><a href="/treatments">Treatment Details</a></li>
     </ul>
   </nav>
 </header>
 {% for treatment in all_treatments %}
+
   <div class="treatment">
     <div class="content">      
             <hr>
@@ -18,12 +19,6 @@
             <li>Check Out Date: {{ treatment.check_out_date }} </li>
             <li>Treatment Notes: {{ treatment.treatment_notes }} </li>
             <li>Animal: {{ treatment.animal.name }} </li>
-            <p><a href="/treatments/{{treatment.id}}/edit">Edit Treatment Details</a></p>
-
-            <form class="delete-form" action="/treatments/{{treatment.id}}/delete" method="POST">
-              <button id="Remove" type="submit">Delete Treatment Infromation</button>         
-            </form>
-            <hr>
     </div>
   </div>
 {% endfor %}

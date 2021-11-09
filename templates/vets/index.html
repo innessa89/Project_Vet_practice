@@ -10,17 +10,27 @@
   </nav>
 </header>
 {% for vet in all_vets %}
+
   <div class="vet">
     <div class="content">      
-            <hr>
-            <li >Name: {{ vet.name }}</li>  
-            <p><a href="/vets/{{vet.id}}/edit">Edit Vet</a></p> 
-            <form class="delete-form" action="/vets/{{vet.id}}/delete" method="POST">
-              <button id="Remove" type="submit">Delete Vet</button>         
-            </form>
-            <hr>
+           
+            
+            <li class="rounded" >Name: {{ vet.name }}</li>  
+            
+            
+            <div class="buttons">
+              <form class="edit-form" action="/vets/{{vet.id}}/edit" method="GET">
+                <button id="Edit" type="submit">Edit Vet</button>         
+              </form>
+              
+              <form class="delete-form" action="/vets/{{vet.id}}/delete" method="POST">
+                <button id="Remove" type="submit">Delete Vet</button>         
+              </form>
+            </div>
+           
     </div>
   </div>
+
 {% endfor %}
 
 {% endblock %}

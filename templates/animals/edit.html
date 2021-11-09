@@ -23,7 +23,7 @@
 
   <div>
     <label for="birth_date">Birth Date:</label>
-    <input type="birth_date" id="birth_date" name="birth_date" value="{{ animal.birth_date }}">
+    <input type="birth_date" id="birth_date" name="birth_date" value="{{ animal.birth_date }}" placeholder="MM-DD-YYYY">
   </div>
 
   <div>
@@ -33,18 +33,6 @@
         <option value="{{ owner.id }}"
           {% if animal.owner.id== owner.id %} selected="selected"{% endif %}>
           {{ owner.name }}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
-
-  <div>
-    <label for="vet">Vet:</label>
-    <select id="vet" name="vet_id">
-      {% for vet in all_vets %}
-        <option value="{{ vet.id }}"
-          {% if animal.vet.id== vet.id %} selected="selected"{% endif %}>
-          {{ vet.name }}
         </option>
       {% endfor %}
     </select>

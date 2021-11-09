@@ -3,9 +3,11 @@ from models.animal import Animal
 from models.owner import Owner
 from models.vet import Vet
 from models.treatment import Treatment
+from datetime import date
 import repositories.owner_repository as owner_repository
 import repositories.vet_repository as vet_repository
 import repositories.animal_repository as animal_repository
+
 
 
 def save(treatment):
@@ -41,6 +43,21 @@ def select(id):
         animal=animal_repository.select(result['animal_id'])
         treatment = Treatment(result['check_in_date'],result['check_out_date'], animal, result['treatment_notes'],result['id'])
     return treatment
+
+
+def select_by_date():
+    treatments=[]
+
+    today=date.today()
+    sql="SELECT * FROM treatments WHERE check_in_date <= %s and check_out_date>=%s"
+    values=[today,today]
+    results =run_sql(sql,values)
+
+    for row in results:
+        animal=animal_repository.select(row['animal_id'])
+        treatment = Treatment(row['check_in_date'],row['check_out_date'], animal, row['treatment_notes'],row['id'])
+        treatments.append(treatment)
+    return treatments
 
 
 def delete_all():

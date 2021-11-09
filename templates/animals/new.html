@@ -34,15 +34,6 @@
         {% endfor %}    
       </select>
     </div>
-    <div>
-    <label for="vet">Vet:</label>
-      <select id="vet" name="vet_id">
-         {% for vet in all_vets %}
-            <option value="{{vet.id}}">{{vet.name}}</option>
-         {% endfor %}    
-        </select>
-      </div>
-  
     <button type="submit">Add Animal</button>
   
   </form>

@@ -31,10 +31,8 @@ def create_animal():
     animal_type=request.form['animal_type']
     birth_date=request.form['birth_date']
     owner_id=request.form['owner_id']
-    vet_id=request.form['vet_id']
     owner=owner_repository.select(owner_id)
-    vet=vet_repository.select(vet_id)
-    animal=Animal(name,animal_type,birth_date,owner,vet,id)
+    animal=Animal(name,animal_type,birth_date,owner,owner.vet,id)
     animal_repository.save(animal)
     return redirect('/animals')
 
@@ -53,8 +51,7 @@ def show_animal(id):
 def edit_animal(id):
     animal=animal_repository.select(id)
     owners=owner_repository.select_all()
-    vets=vet_repository.select_all()
-    return render_template("/animals/edit.html",animal=animal, all_owners=owners, all_vets=vets)
+    return render_template("/animals/edit.html",animal=animal, all_owners=owners)
 
 
 # UPDATE
@@ -65,10 +62,8 @@ def update_animal(id):
     animal_type=request.form['animal_type']
     birth_date=request.form['birth_date']
     owner_id=request.form['owner_id']
-    vet_id=request.form['vet_id']
     owner=owner_repository.select(owner_id)
-    vet=vet_repository.select(vet_id)
-    animal=Animal(name,animal_type,birth_date,owner,vet,id)
+    animal=Animal(name,animal_type,birth_date,owner,owner.vet,id)
     animal_repository.update(animal)
     return redirect('/animals')
 
