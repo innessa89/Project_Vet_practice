@@ -14,13 +14,14 @@
 
 <form action="/vets/{{vet.id}}" method="post">
 
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="{{ vet.name }}">
+  <div class="form-container">
+    <div class="input-select">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="{{ vet.name }}">
+    </div>
+
+    <button type="submit">Edit Vet</button>
   </div>
-
-  <button type="submit">Edit Vet</button>
-
 </form>
 
 </div>

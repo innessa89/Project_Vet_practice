@@ -4,6 +4,8 @@ from repositories import animal_repository
 from repositories import owner_repository
 from repositories import vet_repository
 from models.animal import Animal
+from datetime import date
+from datetime import timedelta
 
 animals_blueprint=Blueprint('animals',__name__)
 
@@ -30,6 +32,9 @@ def create_animal():
     name=request.form['name']
     animal_type=request.form['animal_type']
     birth_date=request.form['birth_date']
+    age=request.form['age']
+    if birth_date == None or birth_date == "":
+        birth_date = date.today()-timedelta(int(age) * 365)
     owner_id=request.form['owner_id']
     owner=owner_repository.select(owner_id)
     animal=Animal(name,animal_type,birth_date,owner,owner.vet,id)
@@ -62,6 +67,9 @@ def update_animal(id):
     animal_type=request.form['animal_type']
     birth_date=request.form['birth_date']
     owner_id=request.form['owner_id']
+    age=request.form['age']
+    if birth_date == None or birth_date == "":
+        birth_date = date.today()-timedelta(int(age) * 365)
     owner=owner_repository.select(owner_id)
     animal=Animal(name,animal_type,birth_date,owner,owner.vet,id)
     animal_repository.update(animal)

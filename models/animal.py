@@ -6,7 +6,7 @@ class Animal:
         self.owner=owner
         self.vet=vet
         self.id=id
-        
+    
 
 
 

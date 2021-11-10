@@ -11,13 +11,14 @@
   </header>
 
 <div class="container">  
-<form action="/vets" method="post">
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Vet Name">
-    </div>  
-    <button type="submit">Add Vet</button>
-  
+  <form action="/vets" method="post">
+    <div class="form-container">
+      <div class="input-select">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Vet Name">
+      </div>  
+      <button type="submit">Add Vet</button>
+    </div>
   </form>
 </div>  
 {% endblock %}

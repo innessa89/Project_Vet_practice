@@ -9,6 +9,9 @@ import repositories.animal_repository as animal_repository
 import repositories.vet_repository as vet_repository
 import repositories.treatment_repository as treatment_repository
 
+from datetime import date
+from datetime import timedelta
+
 # vet1=Vet("Ilker Sezer")
 # vet2=Vet("Stiv Black")
 # vet3=Vet("John Lewis")
@@ -54,8 +57,8 @@ import repositories.treatment_repository as treatment_repository
 # treatment1=treatment_repository.save(treatment2)
 # print(treatment1.id)
 
-treatments = treatment_repository.select_by_date()
-print(len(treatments))
+# treatments = treatment_repository.select_by_date()
+# print(len(treatments))
 
 
 

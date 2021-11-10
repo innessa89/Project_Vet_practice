@@ -11,26 +11,28 @@
   </header>
 <div class="container">
 <form action="/owners/{{owner.id}}" method="post">
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="{{ owner.name }}">
+  <div class="form-container">
+    <div class="input-select">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="{{ owner.name }}">
+    </div>
+    <div class="input-select">
+      <label for="contact_info">Contact Information:</label>
+      <input type="text" id="contact_info" name="contact_info" value="{{ owner.contact_info }}">
+    </div>
+    <div class="input-select">
+      <label for="vet">Vet:</label>
+      <select id="vet" name="vet_id">
+        {% for vet in all_vets %}
+          <option value="{{ vet.id }}"
+            {% if owner.vet.id== vet.id %} selected="selected"{% endif %}>
+            {{ vet.name }}
+          </option>
+        {% endfor %}
+      </select>
+    </div class="input-select">
+    <button type="submit">Edit Owner</button>
   </div>
-  <div>
-    <label for="contact_info">Contact Information:</label>
-    <input type="text" id="contact_info" name="contact_info" value="{{ owner.contact_info }}">
-  </div>
-  <div>
-    <label for="vet">Vet:</label>
-    <select id="vet" name="vet_id">
-      {% for vet in all_vets %}
-        <option value="{{ vet.id }}"
-          {% if owner.vet.id== vet.id %} selected="selected"{% endif %}>
-          {{ vet.name }}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
-  <button type="submit">Edit Owner</button>
 </form>
 
 </div>

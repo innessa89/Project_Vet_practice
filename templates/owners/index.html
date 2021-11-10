@@ -16,10 +16,10 @@
             <li >Name: {{ owner.name }}</li>   
             <li>Contact Details {{ owner.contact_info }} </li>
             <li>Vet: {{ owner.vet.name }} </li>
-
             
-            <p><a href="/owners/{{owner.id}}/edit">Edit Owner</a></p>
-
+            <form class="edit-form" action="owners/{{owner.id}}/edit" method="GET">
+              <button id="Edit" type="submit">Edi Owner</button>         
+            </form>
             <form class="delete-form" action="/owners/{{owner.id}}/delete" method="POST">
               <button id="Remove" type="submit">Delete Owner</button>         
             </form>

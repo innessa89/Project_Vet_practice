@@ -11,33 +11,40 @@
   </header>
 <div class="container">
 <form action="/animals/{{animal.id}}" method="post">
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="{{ animal.name }}">
-  </div>
+  <div class="form-container">
+    <div class="input-select">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="{{ animal.name }}">
+    </div>
 
-  <div>
-    <label for="animal_type">Animal Type:</label>
-    <input type="text" id="animal_type" name="animal_type" value="{{ animal.animal_type }}">
-  </div>
+    <div class="input-select">
+      <label for="animal_type">Animal Type:</label>
+      <input type="text" id="animal_type" name="animal_type" value="{{ animal.animal_type }}">
+    </div>
 
-  <div>
-    <label for="birth_date">Birth Date:</label>
-    <input type="birth_date" id="birth_date" name="birth_date" value="{{ animal.birth_date }}" placeholder="MM-DD-YYYY">
-  </div>
+    <div class="input-select">
+      <label for="birth_date">Birth Date:</label>
+      <input type="birth_date" id="birth_date" name="birth_date" value="{{ animal.birth_date }}" placeholder="MM-DD-YYYY ">
+    </div>
+    
+    <div class="input-select">
+      <label for="age">Age:</label>
+      <input type="text" id="age" name="age" value="{{ animal.age }}">
+    </div>
 
-  <div>
-    <label for="owner">Owner:</label>
-    <select id="owner" name="owner_id">
-      {% for owner in all_owners %}
-        <option value="{{ owner.id }}"
-          {% if animal.owner.id== owner.id %} selected="selected"{% endif %}>
-          {{ owner.name }}
-        </option>
-      {% endfor %}
-    </select>
+    <div class="input-select">
+      <label for="owner">Owner:</label>
+      <select id="owner" name="owner_id">
+        {% for owner in all_owners %}
+          <option value="{{ owner.id }}"
+            {% if animal.owner.id== owner.id %} selected="selected"{% endif %}>
+            {{ owner.name }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit">Edit Animal</button>
   </div>
-  <button type="submit">Edit Animal</button>
 </form>
 </div>
 

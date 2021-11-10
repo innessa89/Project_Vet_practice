@@ -1,5 +1,5 @@
 body{
-    font-family: "Trebuchet MS","Lucida Sans", arial, sans-serif; font-size: 16px;
+    font-family: "Trebuchet MS","Lucida Sans", sans-serif; font-size: 16px;
     margin: 0;
     background-color:#fcf8f4;
 }
@@ -39,12 +39,11 @@ header {
     background: #f0f3e1
 }
 
-/* button {
-    width : 50%;
+button {
     padding-left: 10px;
     padding: 10px;
-    margin: 10px;
-  } */
+    margin: 2px;
+  }
 
   .container{
     width: 1000px;
@@ -63,27 +62,29 @@ header {
     */
 }
 
+.form-container{
+    float:left;
+    margin-left: 30%;
+}
+ 
 input,select{
-    width: 300px;
-    height: 30px;
-    font-size: 18px;
-    margin-bottom: 25px;
-    border-radius: 4px;
-    padding-left: 10px;
-
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    min-width: 45%;
+} 
+label{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 10px;
+    float:left;
 }
 
-/* .input-select{
-    padding:11px 30px;
-    margin: 5px 0 20px 0;
-    font-size: 15px;
-    color: #fff;
-    background-color: #dfecd6;
-    border: none;
-    border-bottom: 4px solid #6ee9fd;
-    cursor:pointer;
+.input-select{
+    clear:both; text-align:right;
 }
-   */
+   
 
  .animal{
     border: 1px solid #ccc;

@@ -11,30 +11,32 @@
   </header>
 <div class="container">
 <form action="/treatments/{{treatment.id}}" method="post">
-  <div>
-    <label for="check_in_date">Check In Date:</label>
-    <input type="text" id="check_in_date" name="check_in_date" value="{{ treatment.check_in_date }}">
+  <div class="form-container">
+    <div class="input-select">
+      <label for="check_in_date">Check In Date:</label>
+      <input type="text" id="check_in_date" name="check_in_date" value="{{ treatment.check_in_date }}">
+    </div>
+    <div class="input-select">
+      <label for="check_out_date">Check Out Date:</label>
+      <input type="text" id="check_out_date" name="check_out_date" value="{{ treatment.check_out_date }}">
+    </div>
+    <div class="input-select">
+      <label for="treatment_notes">Treatment Notes:</label>
+      <input type="text" id="treatment_notes" name="treatment_notes" value="{{ treatment.treatment_notes }}">
+    </div>
+    <div class="input-select">
+      <label for="animal">Animal Name:</label>
+      <select id="animal" name="animal_id">
+        {% for animal in all_animals %}
+          <option value="{{ animal.id }}"
+            {% if treatment.animal.id== animal.id %} selected="selected"{% endif %}>
+            {{ animal.name }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit">Edit Treatment Details</button>
   </div>
-  <div>
-    <label for="check_out_date">Check Out Date:</label>
-    <input type="text" id="check_out_date" name="check_out_date" value="{{ treatment.check_out_date }}">
-  </div>
-  <div>
-    <label for="treatment_notes">Treatment Notes:</label>
-    <input type="text" id="treatment_notes" name="treatment_notes" value="{{ treatment.treatment_notes }}">
-  </div>
-  <div>
-    <label for="animal">Animal Name:</label>
-    <select id="animal" name="animal_id">
-      {% for animal in all_animals %}
-        <option value="{{ animal.id }}"
-          {% if treatment.animal.id== animal.id %} selected="selected"{% endif %}>
-          {{ animal.name }}
-        </option>
-      {% endfor %}
-    </select>
-  </div>
-  <button type="submit">Edit Treatment Details</button>
 </form>
 </div>
 
