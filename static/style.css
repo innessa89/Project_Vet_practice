@@ -33,19 +33,75 @@ header {
     text-decoration: none;
 }
 
-.content li{
+/* .content li{
     list-style: none; 
     font: 17px "Trebuchet MS", "Lucida Sans";
     background: #f0f3e1
+} */
+
+.list{
+    list-style: none; 
+    font: 18px "Trebuchet MS", "Lucida Sans";
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
+.list li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+    background: #DAD2CA;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: .3s ease-out;
+    margin-right: 70%;
+}   
+
+.list li:hover {background: #E9E4E0;}
+
 
 button {
     padding-left: 10px;
     padding: 10px;
     margin: 2px;
+    
   }
+.edit{
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    width: 200px;
+    background-color:rgb(248, 205, 125);  
+}
+.edit:hover{
+    background-color: rgb(237, 137, 14);
+    color: white;
+}
 
-  .container{
+.add{
+    font-size: 15px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s; 
+    width: 200px;
+    background-color: #bddfb4fa;  
+}
+.add:hover{
+    background-color: rgba(0, 128, 0, 0.801);
+    color: white;
+}
+.delete{
+    font-size: 15px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    width: 200px;
+    background-color: #e75d5dfa;  
+}
+.delete:hover{
+    background-color: rgb(146, 20, 20);
+    color: white;
+}
+.container{
     width: 1000px;
     height: 667px;
     background-image: url(vet_project_image/e99cda8fbae4e4f41fbe17aebc6191e5.png);

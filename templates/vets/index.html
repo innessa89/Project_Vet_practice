@@ -11,14 +11,16 @@
 </header>
 {% for vet in all_vets %}
   <div class="vet">
-    <div class="content">     
-      <li>Name: {{ vet.name }}</li>        
+    <div class="content">  
+      <ul class="list">    
+      <li>Name: {{ vet.name }}</li>    
+      </ul>    
       <div class="buttons">
           <form class="edit-form" action="/vets/{{vet.id}}/edit" method="GET">
-            <button id="Edit" type="submit">Edit Vet</button>         
+            <button class="edit" id="Edit" type="submit">Edit Vet</button>         
           </form>
           <form class="delete-form" action="/vets/{{vet.id}}/delete" method="POST">
-            <button id="Remove" type="submit">Delete Vet</button>         
+            <button class="delete" id="Remove" type="submit">Delete Vet</button>         
           </form>
       </div> 
     </div>

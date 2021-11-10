@@ -12,18 +12,19 @@
 {% for owner in all_owners %}
   <div class="owner">
     <div class="content">      
-           
+        <ul class="list"> 
             <li >Name: {{ owner.name }}</li>   
             <li>Contact Details {{ owner.contact_info }} </li>
             <li>Vet: {{ owner.vet.name }} </li>
-            
+        </ul>   
+         <div class="buttons">
             <form class="edit-form" action="owners/{{owner.id}}/edit" method="GET">
-              <button id="Edit" type="submit">Edi Owner</button>         
+              <button class="edit" id="Edit" type="submit">Edit Owner</button>         
             </form>
             <form class="delete-form" action="/owners/{{owner.id}}/delete" method="POST">
-              <button id="Remove" type="submit">Delete Owner</button>         
+              <button class="delete" id="Remove" type="submit">Delete Owner</button>         
             </form>
-            
+         </div>   
     </div>
   </div>
 {% endfor %}

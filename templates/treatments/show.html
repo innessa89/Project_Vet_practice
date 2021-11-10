@@ -11,13 +11,14 @@
   </nav>
 </header>
 {% for treatment in all_treatments %}
-
   <div class="treatment">
-    <div class="content">      
-            <li>Check In Date: {{ treatment.check_in_date }}</li>   
-            <li>Check Out Date: {{ treatment.check_out_date }} </li>
-            <li>Treatment Notes: {{ treatment.treatment_notes }} </li>
-            <li>Animal: {{ treatment.animal.name }} </li>
+    <div class="content"> 
+      <ul class="list">     
+         <li>Check In Date: {{ treatment.check_in_date }}</li>   
+         <li>Check Out Date: {{ treatment.check_out_date }} </li>
+         <li>Treatment Notes: {{ treatment.treatment_notes }} </li>
+         <li>Animal: {{ treatment.animal.name }} </li>
+    </ul>
     </div>
   </div>
 {% endfor %}
