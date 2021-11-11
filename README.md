@@ -1,4 +1,4 @@
-# Project: Vet Management App
+Project: Vet Management App
 
 # The project using:
 
